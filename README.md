@@ -6,3 +6,6 @@ Code Included for Assignments listed below:
 - 2.3 - bootstrap grid
 - 2.4 - bootstrap quiz⭐️
 - 2.5 - 2.5 - bootstrap test❇️
+
+"Go Back to Main Menu" button may differ in size based on device and resolution used.
+
