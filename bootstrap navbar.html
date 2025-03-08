@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar and Navbar Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for Sidebar and Navbar -->
+    <style>
+        /* Custom Navbar Color Scheme */
+        .navbar-custom {
+            background-color: #2c3e50; /* Dark blue */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ecf0f1; /* Light gray */
+        }
+        .navbar-custom .nav-link:hover {
+            color: #3498db; /* Light blue on hover */
+        }
+        .navbar-custom .disabled {
+            color: #7f8c8d !important; /* Gray for disabled link */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100vh; /* Full height */
+            width: 250px; /* Sidebar width */
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #34495e; /* Slightly lighter dark blue */
+            padding-top: 60px; /* Space for navbar */
+            overflow-x: hidden;
+            transition: 0.3s; /* Smooth transition */
+        }
+        .sidebar.collapsed {
+            width: 60px; /* Collapsed width */
+        }
+        .sidebar .nav-link {
+            color: #ecf0f1; /* Light gray */
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #3498db; /* Light blue on hover */
+            color: #2c3e50; /* Dark blue text */
+        }
+        .sidebar .nav-link i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+        .sidebar.collapsed .nav-link span {
+            display: none; /* Hide text when collapsed */
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px; /* Same as sidebar width */
+            padding: 20px;
+            transition: 0.3s; /* Smooth transition */
+        }
+        .main-content.collapsed {
+            margin-left: 60px; /* Same as collapsed sidebar width */
+        }
+
+        /* Search Bar */
+        .search-bar {
+            max-width: 300px; /* Limit search bar width */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fire"></i>
+                    <span>Trending</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Liked Videos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">
+                    <i class="fas fa-ban"></i>
+                    <span>Disabled</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <!-- Toggle Button for Sidebar -->
+                <button class="btn btn-light me-3" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">My Website</a>
+
+                <!-- Search Bar -->
+                <form class="d-flex search-bar">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Assignments
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="assignment1.html">Assignment 1</a></li>
+                                <li><a class="dropdown-item" href="assignment2.html">Assignment 2</a></li>
+                                <li><a class="dropdown-item" href="assignment3.html">Assignment 3</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- External Link -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com" target="_blank">Google</a>
+                        </li>
+
+                        <!-- Disabled Link -->
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container mt-4">
+            <h1>Welcome to My Website</h1>
+            <p>This is the main content area. The sidebar can be toggled to collapse or expand.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (with Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Custom JS for Sidebar Toggle -->
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('collapsed');
+        });
+    </script>
+    
+</body>
+</html>
