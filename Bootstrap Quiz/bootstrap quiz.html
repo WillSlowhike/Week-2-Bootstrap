@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cat Support Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d6f0fa;
+        }
+        .navbar {
+            background-color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px;
+            border: 5px solid red;
+            border-radius: 25px;
+            background-color: #fff3cd;
+            margin-bottom: 20px;
+        }
+        .sub-header {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px;
+            border: 3px solid green;
+            border-radius: 10px;
+            background-color: #d4edda;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="cat-logo.jpeg" alt="Cat Logo" width="40" height="40" class="d-inline-block align-text-top">
+            Cat Support Group
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Meeting Times</a></li>
+                        <li><a class="dropdown-item" href="#">Support Resources</a></li>
+                        <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="header">
+        Have <span style="color: orange;">you</span> been forgotten?
+    </div>
+    <div class="sub-header">
+        Have you been replaced?
+    </div>
+
+    <div class="form-container">
+        <p>Have your owner's recently had a baby and now they don't play with you? You may be entitled to "pain and suffering", especially if you had human insurance!</p>
+        <p>Fill out this form to sign up for a support group!</p>
+        
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <div class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">When are you free to meet for the support group?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="meeting-time" id="monday">
+                    <label class="form-check-label" for="monday">Mondays</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="meeting-time" id="morning-naps">
+                    <label class="form-check-label" for="morning-naps">Between morning naps</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="meeting-time" id="3am">
+                    <label class="form-check-label" for="3am">At 3am each night</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
